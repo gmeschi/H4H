@@ -15,7 +15,7 @@ function sendToBack(category){
         console.log(data);
         //call a function that does what we want
         communities();
-
+        
     })
     .catch(error => {
         //deal with errors

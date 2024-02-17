@@ -1,6 +1,6 @@
 
 // Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
+//document.getElementById("defaultOpen").click();
 
 // Get the form element
 var form = document.getElementById('searchForm');
@@ -20,12 +20,13 @@ form.addEventListener('submit', function(event) {
 });
 
 function sendBackend(location, activity, category) {
+    console.log("sendBackend Called\n");
     var userInput = location + " " + activity + " " + category;
-    userInput = "liquor stores near me";
+    //userInput = "liquor stores near me";
     //what should this url be??
     //"http://127.0.0.1:5500/Front%20End/thirdPlaces.html?input=" + userInput;
     //"http://127.0.0.1:5500/getMain?=" + input
-    url = "http://127.0.0.1:5500/getMain?=" + userInput;
+    url = "http://127.0.0.1:5500/getThirdPlace?=" + userInput;
     fetch(url, {
         method: 'GET',
     }).then(response => {
@@ -33,7 +34,7 @@ function sendBackend(location, activity, category) {
         if(!response.ok) {
             throw new Error('HTTP error! Status: ${response.status}');
         }
-            return response.json();
+        return response.json();
     })
     .then(data =>{
         //do stuff to data
@@ -44,6 +45,7 @@ function sendBackend(location, activity, category) {
         //deal with errors
         console.error('Error:', error);
     });
+
 
 
 }
