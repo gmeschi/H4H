@@ -5,7 +5,6 @@ body {
 .tabs {
     overflow: hidden;
 }
-
 .tab {
     background-color: rgb(201, 76, 76);
     float: left;
