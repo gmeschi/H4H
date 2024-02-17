@@ -3,9 +3,10 @@
 document.getElementById("defaultOpen").click();
 
 
-function sendBackend() {
+function sendBackend(location, activity, category) {
     var userInput;
     userInput = "liquor stores near me";
+    userInput = ""
     //what should this url be??
     //"http://127.0.0.1:5500/getMain?=" + input
     url = "http://127.0.0.1:5500/Front%20End/thirdPlaces.html?input=" + userInput;
