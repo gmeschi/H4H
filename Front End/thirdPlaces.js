@@ -23,8 +23,9 @@ function sendBackend(location, activity, category) {
     var userInput = location + " " + activity + " " + category;
     userInput = "liquor stores near me";
     //what should this url be??
+    //"http://127.0.0.1:5500/Front%20End/thirdPlaces.html?input=" + userInput;
     //"http://127.0.0.1:5500/getMain?=" + input
-    url = "http://127.0.0.1:5500/Front%20End/thirdPlaces.html?input=" + userInput;
+    url = "http://127.0.0.1:5500/getMain?=" + input;
     fetch(url, {
         method: 'GET',
     }).then(response => {
