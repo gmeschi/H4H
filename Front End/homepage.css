@@ -23,9 +23,10 @@ header::after {
 .logo {
     color: #29091e;
     float: left;
-    padding: 10px 0;
-    padding-left: 10px;
-    font-size: 30px;
+    font-size: 1.7vw;
+    width: 30%;
+    padding-top: 0.6vw;
+    text-align: center;   
 }
 
 nav {
@@ -40,8 +41,9 @@ nav ul {
 
 nav li {
     display: inline-block;
-    margin: 0 35px;
-    padding-top: 25px;
+    margin: 0 3vw;
+    padding-top: 1.3vw;
+    padding-bottom: 1vw;
 
     position: relative;
 }
@@ -50,7 +52,7 @@ nav a {
     color: #29091e;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 1.4vw;
 }
 
 nav a:hover {
