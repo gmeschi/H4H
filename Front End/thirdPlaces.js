@@ -22,7 +22,7 @@ form.addEventListener('submit', function(event) {
 function sendBackend(location, activity, category) {
     console.log("sendBackend Called\n");
     var userInput = location + " " + activity + " " + category;
-    userInput = "liquor stores near me";
+    //userInput = "liquor stores near me";
     //what should this url be??
     //"http://127.0.0.1:5500/Front%20End/thirdPlaces.html?input=" + userInput;
     //"http://127.0.0.1:5500/getMain?=" + input
