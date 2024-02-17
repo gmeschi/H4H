@@ -7,12 +7,45 @@
 <body>
     <h1>Communities</h1>
     <button onclick="window.location.href='Homepage.html'">Home</button>
-    <div class ="container">
-        <div class ="popup">
-            <h2> Thank you!</h2>
-            <p> Here are the recommended clubs!</p>
+   
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Choose Activity Group</title>
+        
+      </head>
+      <body>
+        <h2>Choose Activity Group</h2>
+        <div class="btn-group">
+          <button class="btn" onclick="showVolunteerGroup()">Volunteer Group</button>
+          <button class="btn" onclick="showSportsGroup()">Sports</button>
+          <button class="btn" onclick="showLocalClubActivities()">Local Club Activities</button>
         </div>
-    </div>
+      
+        <div id="volunteerGroup" style="display: none;">
+          <!-- Content for Volunteer Group -->
+          <h3>Volunteer Group Activities</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel justo eu purus tincidunt tincidunt.</p>
+        </div>
+      
+        <div id="sportsGroup" style="display: none;">
+          <!-- Content for Sports Group -->
+          <h3>Sports Activities</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel justo eu purus tincidunt tincidunt.</p>
+        </div>
+      
+        <div id="localClubActivities" style="display: none;">
+          <!-- Content for Local Club Activities -->
+          <h3>Local Club Activities</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel justo eu purus tincidunt tincidunt.</p>
+        </div>
+        <div class ="container">
+            <div class ="popup">
+                <h2> Thank you!</h2>
+                <p> Here are the recommended clubs!</p>
+            </div>
+        </div>
+    
 
     
 </html>
