@@ -7,7 +7,7 @@ body {
 }
 
 .tab {
-    background-color: #f1f1f1;
+    background-color: #ba2525;
     float: left;
     border: none;
     outline: none;
@@ -18,7 +18,7 @@ body {
 }
 
 .tab:hover {
-    background-color: #ddd;
+    background-color: #264cb3;
 }
 
 .tabContent {
