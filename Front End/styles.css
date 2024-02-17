@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.tabs {
+    overflow: hidden;
+}
+
+.tab {
+    background-color: #f1f1f1;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tab:hover {
+    background-color: #ddd;
+}
+
+.tabContent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
