@@ -2,10 +2,28 @@
 <html>
 <head>
     <title>3rd Places</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="thirdPlaces.css">
 </head>
 <body>
     <h1>3rd Places</h1>
 
+    <div id="userInformation" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="userInfoForm">
+                <label for="location">Location:</label><br>
+                <input type="text" id="location" name="location"><br>
+                <label for="activity">Activity:</label><br>
+                <input type="text" id="activity" name="activity"><br>
+                <label for="category">Category:</label><br>
+                <input type="text" id="category" name="category"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
     <button onclick="window.location.href='Homepage.html'">Home</button>
+    <!-- Connect the JavaScript file -->
+    <script src="thirdPlaces.js"></script>
+</body>
 </html>
