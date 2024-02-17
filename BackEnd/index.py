@@ -11,9 +11,17 @@ CORS(app)
 
 @app.route('/getThirdPlace', methods=['GET'])
 def get_third_place():
-    lat = 0
+    
     api_key = "AIzaSyA5L1utCSQOnj7d-MKRU8kLUopQ3DUVE38"
     #first arg is the string from front end
     string = request.args.get('getMain')
     dict = get_place_info(string, api_key)
     return json.dumps(dict, indent=4)
+
+@app.route('/getActivity', methods=['GET'])
+def get_activity():
+    long = 0
+    activity = request.args.get('whatever')
+    #call function that returns the
+    dict = functionthatdoessomething(activity)
+    return json.dumps()
