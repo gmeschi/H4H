@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.tabs {
+    overflow: hidden;
+}
+.tab {
+    background-color: rgb(201, 76, 76);
+    float: left;
+    border: 2px solid #e7e7e7;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tab:hover {
+    background-color: #ddd;
+}
+
+.tabContent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+#container {
+    width: 80%;
+    aspect-ratio: 3/1;
+    padding: 40px 0;
+    margin: auto;
+    border: solid black 2px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
+  
+  
