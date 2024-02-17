@@ -25,5 +25,23 @@ function sendToBack(category){
 
 function communities(){
     
+    function showVolunteerGroup() {
+      document.getElementById("volunteerGroup").style.display = "block";
+      document.getElementById("sportsGroup").style.display = "none";
+      document.getElementById("localClubActivities").style.display = "none";
+    }
+
+    function redirectToSportsPage() {
+      // Redirect to the sports page
+      window.location.href = "sports.html";
+    }
+
+    function showLocalClubActivities() {
+      document.getElementById("volunteerGroup").style.display = "none";
+      document.getElementById("sportsGroup").style.display = "none";
+      document.getElementById("localClubActivities").style.display = "block";
+    }
+  
+    
 
 }
