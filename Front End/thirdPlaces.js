@@ -38,6 +38,7 @@ function sendBackend(location, activity, category) {
     .then(data =>{
         //do stuff to data
         console.log(data);
+        //call a function that does what we want
     })
     .catch(error => {
         //deal with errors
