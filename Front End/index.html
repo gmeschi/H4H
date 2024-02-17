@@ -7,8 +7,29 @@
 </head>
 <body>
     <div class="tabs">
+        <button class="tab" onclick="openTab(event, 'userInformation')">User Information</button>
         <button class="tab" onclick="openTab(event, 'thirdPlaces')">3rd Places</button>
         <button class="tab" onclick="openTab(event, 'communities')">Communities</button>
+    </div>
+
+    <div id="userInformation" class="tabContent">
+        <h2>User Information</h2>
+        <form id="userInfoForm">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="location">Location:</label><br>
+            <input type="text" id="location" name="location"><br>
+            <label for="radius">Search Radius:</label><br>
+            <input type="number" id="radius" name="radius"><br>
+            <label for="interests">Interests:</label><br>
+            <select id="interests" name="interests" multiple>
+                <option value="park">Park</option>
+                <option value="cafes">Cafes</option>
+                <option value="sports">Sports</option>
+                <!-- Add more options as needed -->
+            </select><br>
+            <input type="submit" value="Submit">
+        </form>
     </div>
 
     <div id="thirdPlaces" class="tabContent">
