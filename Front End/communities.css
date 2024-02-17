@@ -6,18 +6,18 @@ body {
     overflow: hidden;
 }
 .tab {
-    background-color: rgb(201, 76, 76);
+    background-color: #007bff;
     float: left;
     border: 2px solid #e7e7e7;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
+    padding: 10px 20px;
     transition: 0.3s;
     font-size: 17px;
 }
 
 .tab:hover {
-    background-color: #ddd;
+    background-color: #0056b3;
 }
 
 .tabContent {
