@@ -18,8 +18,8 @@ def get_third_place():
     dict = get_place_info(string, api_key)
     return json.dumps(dict, indent=4)
 
-@app.route('/getActivity', methods=['GET'])
-def get_activity():
+@app.route('/getCommunity', methods=['GET'])
+def get_community():
     long = 0
     activity = request.args.get('whatever')
     #call function that returns the
