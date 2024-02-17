@@ -7,22 +7,21 @@
 <body>
     <h1>3rd Places</h1>
 
-    <div id="userInformation" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form id="userInfoForm">
-                <label for="location">Location:</label><br>
-                <input type="text" id="location" name="location"><br>
-                <label for="activity">Activity:</label><br>
-                <input type="text" id="activity" name="activity"><br>
-                <label for="category">Category:</label><br>
-                <input type="text" id="category" name="category"><br>
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-    </div>
-
     <button onclick="window.location.href='Homepage.html'">Home</button>
+    
+    <form id="userInfo">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location">
+    
+        <label for="activity">Activity:</label>
+        <input type="text" id="activity" name="activity">
+    
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category">
+    
+        <input type="submit" value="Search">
+    </form>
+
     <!-- Connect the JavaScript file -->
     <script src="thirdPlaces.js"></script>
 </body>
