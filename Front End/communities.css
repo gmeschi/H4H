@@ -5,6 +5,31 @@ body {
     font-weight: 300;
 }
 
+.tabs {
+    overflow: hidden;
+}
+
+.tab {
+    background-color: #ba2525;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tab:hover {
+    background-color: #264cb3;
+}
+
+.tabContent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+
 .container {
     width: 80%;
     margin: 0 auto;
