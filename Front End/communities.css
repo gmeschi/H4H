@@ -68,28 +68,20 @@ h1 {
     border-top: none;
 }
 
-#resultText0 {
-    margin-left: 2vw;
-    background-color: ;
-}
-
-#resultText1{
+#searchResult {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
     background-color: bisque;
-    color: #29091e;
-    padding: 0.5vh 0.5vw;
-    width: 26vw;
-    text-align: left;
-    text-decoration: none;
-    display: block;
-    font-size: 1.3vw;
-    border-radius: 0.75vw;
-    margin-left: 2vw;
+    text-align: center;
+
+    width: 80%;
+    margin: 10%;
     margin-top: 5vh;
 }
 
-#searchResult {
-    
-}
+
 
 /*top nav bar*/
 .container {
