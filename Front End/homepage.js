@@ -1,4 +1,4 @@
-function initMap() {
+/*function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
       center: { lat: 39.8282, lng: -100 },
       zoom: 4
@@ -29,10 +29,10 @@ function initMap() {
       });
     });
 
-    /* Add a button to remove the marker
+     Add a button to remove the marker
     var removeMarkerButton = document.createElement('button');
     removeMarkerButton.textContent = 'Remove Marker';
-    document.body.appendChild(removeMarkerButton);*/
+    document.body.appendChild(removeMarkerButton);
 
     removeMarkerButton.addEventListener('click', function() {
       // Remove the marker from the map
@@ -41,4 +41,4 @@ function initMap() {
         console.log('Marker removed.');
       }
     });
-}
+}*/
