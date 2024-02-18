@@ -39,7 +39,6 @@ function sendBackend(location, activity, category) {
     //console.log("sendBackend Called");
     var userInput = location + " " + activity + " " + category;
 
-    //"http://127.0.0.1:5500/Front%20End/thirdPlaces.html?input=" + userInput;
     url = "http://127.0.0.1:3000/getThirdPlace?string=" + userInput;
     fetch(url, {
         method: 'GET',
