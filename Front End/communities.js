@@ -47,9 +47,9 @@ function updatedSearchResults(data) {
         document.getElementById('resultText0').textContent = "Fitness Based Communities:";
     }
 
-    document.getElementById('resultText1').textContent = data.Community1.name + ": "+  data.Community1.description;
-    document.getElementById('resultText2').textContent = data.Community2.name + ": "+  data.Community2.description;
-    document.getElementById('resultText3').textContent = data.Community3.name + ": "+  data.Community3.description;
-    document.getElementById('resultText4').textContent = data.Community4.name + ": "+  data.Community4.description;
-    document.getElementById('resultText5').textContent = data.Community5.name + ": "+  data.Community5.description;
+    document.getElementById('resultText1').textContent = data.Community1.name + ": "+  data.Community1.description + "-" + data.Community1.meeting_times;
+    document.getElementById('resultText2').textContent = data.Community2.name + ": "+  data.Community2.description+ "-" + data.Community2.meeting_times;
+    document.getElementById('resultText3').textContent = data.Community3.name + ": "+  data.Community3.description+ "-" + data.Community3.meeting_times;
+    document.getElementById('resultText4').textContent = data.Community4.name + ": "+  data.Community4.description+ "-" + data.Community4.meeting_times;
+    document.getElementById('resultText5').textContent = data.Community5.name + ": "+  data.Community5.description + "-" + data.Community5.meeting_times;
 }
