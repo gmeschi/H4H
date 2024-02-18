@@ -2,10 +2,34 @@
 <html>
 <head>
     <title>3rd Places</title>
+
+    <!-- Formatting for different browsers -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <!-- provide the Maps API -->    
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5L1utCSQOnj7d-MKRU8kLUopQ3DUVE38&loading=async&callback=initMap">
+    </script>
+    
     <link rel="stylesheet" type="text/css" href="thirdPlaces.css">
     
 </head>
 <body>
+    <header>
+
+        <div class="container">
+
+            <nav>
+                <h1 class="logo">Name of Project</h1>
+                <ul>                        
+                    <li><a href="#" onclick="window.location.href='homepage.html'">Home</a></li>
+                    <li><a class="active" href="#">Third Places</a></li>
+                    <li><a href="#" onclick="window.location.href='communities.html'">Communities</a></li>
+                </ul>
+            </nav>
+
+        </div>
+     </header>
     <h1>3rd Places</h1>
 
     <button onclick="window.location.href='Homepage.html'">Home</button>
@@ -22,6 +46,8 @@
     
         <input type="submit" value="Search">
     </form>
+
+    <div id="map"></div>
 
     <!-- Connect the JavaScript file -->
     <script src="thirdPlaces.js"></script>

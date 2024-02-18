@@ -1,14 +1,18 @@
 body {
-    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #ffffff;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
 }
 
 .tabs {
     overflow: hidden;
 }
+
 .tab {
-    background-color: rgb(201, 76, 76);
+    background-color: #ba2525;
     float: left;
-    border: 2px solid #e7e7e7;
+    border: none;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
@@ -17,23 +21,108 @@ body {
 }
 
 .tab:hover {
-    background-color: #ddd;
+    background-color: #264cb3;
 }
+.button {
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ccc;
+}
+
 
 .tabContent {
     display: none;
     padding: 6px 12px;
     border-top: none;
 }
-#container {
+
+.container {
     width: 80%;
-    aspect-ratio: 3/1;
-    padding: 40px 0;
-    margin: auto;
-    border: solid black 2px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-  }
-  
-  
+    margin: 0 auto;
+}
+
+header {
+    background: #ffb94f;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    color: #29091e;
+    font-size: 1.7vw;
+    padding-right: 18vw;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    float: right;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+nav li {
+    margin: 0 3vw;
+    position: relative;
+}
+
+nav a {
+    color: #29091e;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.4vw;
+}
+
+.active::before {
+    content: '';
+    display: block;
+    border-radius: 0.2vw;
+    height: .4vw;
+    background-color: bisque;
+
+    position: absolute;
+    top: -1vw;
+    width: 100%;
+}
+
+nav a:hover {
+    color: bisque;
+}
+
+nav a::before {
+    content: '';
+    display: block;
+    border-radius: 0.2vw;
+    height: .4vw;
+    background-color: #29091e;
+
+    position: absolute;
+    top: -1vw;
+    width: 0%;
+
+    transition: all ease-in-out 230ms;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
