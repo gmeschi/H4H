@@ -2,12 +2,12 @@
 // Declare map and marker variables in the global scope
 var map;
 var marker;
+// Declare location variables in the global scope
 var locationName;
 var locationAddress;
 var locationOpenStatus;
 var locationRating;
 var locationData;
-
 
 // Get the element with id="defaultOpen" and click on it
 //document.getElementById("defaultOpen").click();
@@ -53,15 +53,14 @@ function sendBackend(location, activity, category) {
     })
     .then(data =>{
         if (data.candidates && data.candidates.length > 0) {
-    
-            // //do stuff to data
-
+            // get the address from the data and convert to coordinates to update map
             var address = data.candidates[0].formatted_address;
             geocode(address, function(latitude, longitude) {
                 console.log(latitude, longitude);
                 updateLocation(latitude, longitude);
             });
             console.log(data);
+            //send the data to function to update the search results html
             updatedSearchResults(data);
         } else {
             console.error('Candidates array is empty or not found in data:', data);
@@ -73,6 +72,7 @@ function sendBackend(location, activity, category) {
     });
 }
 
+// function to 
 function geocode(address, callback) {
     var geocodingUrl = "https://maps.googleapis.com/maps/api/geocode/json";
     fetch(`${geocodingUrl}?address=${encodeURIComponent(address)}&key=AIzaSyA5L1utCSQOnj7d-MKRU8kLUopQ3DUVE38`)
@@ -121,6 +121,11 @@ function updatedSearchResults(data) {
     if (data.candidates && data.candidates.length > 0) {
         locationName = data.candidates[0].name || "";
         locationRating = data.candidates[0].rating || "";
+        if (locationRating <= 3.5) {
+            document.getElementById('LocationRating').style.color = "red";
+        } else {
+            document.getElementById('LocationRating').style.color = "green";
+        }
         locationOpen = data.candidates[0].opening_hours ? data.candidates[0].opening_hours.open_now : null;
         locationOpenStatus = (locationOpen !== null) ? (locationOpen ? "Open" : "Closed") : "";
         if (locationOpenStatus === "Open") {
@@ -128,14 +133,7 @@ function updatedSearchResults(data) {
         } else {
             document.getElementById('LocationOpenStatus').style.color = "red";
         }
-
         locationAddress = data.candidates[0].formatted_address || "";
-
-        console.log(locationOpen);
-        console.log(locationOpenStatus);
-        console.log(locationAddress);
-        console.log(locationRating);
-        console.log(locationName);
 
         // Update the HTML elements only if the corresponding data exists
         if (locationName !== "") {
