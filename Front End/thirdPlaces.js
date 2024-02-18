@@ -4,6 +4,8 @@ var map;
 var marker;
 var locationName;
 var locationAddress;
+var locationOpenStatus;
+var locationRating;
 var locationData;
 
 
@@ -59,8 +61,8 @@ function sendBackend(location, activity, category) {
                 console.log(latitude, longitude);
                 updateLocation(latitude, longitude);
             });
+            console.log(data);
             updatedSearchResults(data);
-            
         } else {
             console.error('Candidates array is empty or not found in data:', data);
         }
@@ -115,11 +117,37 @@ document.getElementById('userInfo').addEventListener('submit', function(event) {
 });
 
 function updatedSearchResults(data) {
-    locationAddress = data.candidates[0].formatted_address;
-    locationName = data.candidates[0].name;
-    locationName = data.candidates[0].name;
+    if (data.candidates && data.candidates.length > 0) {
+        locationName = data.candidates[0].name || "";
+        locationRating = data.candidates[0].rating || "";
+        locationOpen = data.candidates[0].opening_hours ? data.candidates[0].opening_hours.open_now : null;
+        locationOpenStatus = (locationOpen !== null) ? (locationOpen ? "Open" : "Closed") : "";
 
-    console.log(locationAddress);
-    console.log(locationName);
-    document.getElementById('resultText').textContent = locationName + " at " + locationAddress;
+        locationAddress = data.candidates[0].formatted_address || "";
+
+        console.log(locationOpen);
+        console.log(locationOpenStatus);
+        console.log(locationAddress);
+        console.log(locationRating);
+        console.log(locationName);
+
+        // Update the HTML elements only if the corresponding data exists
+        if (locationName !== "") {
+            document.getElementById('LocationName').textContent = locationName;
+        }
+
+        if (locationRating !== "") {
+            document.getElementById('LocationRating').textContent = locationRating + " stars";
+        }
+
+        if (locationOpenStatus !== "") {
+            document.getElementById('LocationOpenStatus').textContent = locationOpenStatus;
+        }
+
+        if (locationAddress !== "") {
+            document.getElementById('LocationAddress').textContent = locationAddress;
+        }
+    } else {
+        console.error('Candidates array is empty or not found in data:', data);
+    }
 }

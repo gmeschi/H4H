@@ -5,6 +5,12 @@ body {
   font-weight: 300;
 }
 
+h1 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
 #map {
     position: absolute;
     display: flex;
@@ -25,13 +31,49 @@ body {
     margin-left: 20px;
 }
 
+#userInfo button {
+    margin-left: 30px; /* Adjust the left margin to shift the button to the right */
+}
+
 #searchResult {
     display: none;  /* Initially hidden */
     width: 35vw;     /* 80% of the parent element's width */
-    height: 40vh;   /* 50% of the viewport's height */
-    border: 1px solid black;
+    height: 25vh;   /* 50% of the viewport's height */
+    border: 1px solid #ccc; /* Add a border for better separation */
+    border-radius: 8px; /* Round the corners */
     margin-top: 20px;
     margin-left: 20px;
+    background-color: #f8f8f8; /* Add a background color */
+    text-align: center; /* Center the content */
+}
+
+#LocationName,
+#LocationRating,
+#LocationOpenStatus,
+#LocationAddress {
+    margin: 10px 0; /* Add margin to each paragraph for spacing */
+}
+
+/* Optionally, you can add additional styling for each paragraph individually */
+#LocationName {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007bff; /* Set the color to blue */
+}
+
+#LocationRating {
+    font-size: 1.2em;
+    color: #28a745; /* Set the color to green */
+}
+
+#LocationOpenStatus {
+    font-size: 1.2em;
+    color: #dc3545; /* Set the color to red */
+}
+
+#LocationAddress {
+    font-size: 1.2em;
+    color: #333; /* Set the color to dark gray */
 }
 
 .container {
