@@ -23,3 +23,8 @@ def get_community():
     #call function that returns the
     dict = functionthatdoessomething(activity)
     return json.dumps()
+
+if __name__ == '__main__':
+    port = 3000
+    app.run(port=port)
+    print(f'Open the URL: http://localhost:{port} in your browser')
