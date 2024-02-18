@@ -23,6 +23,21 @@ body {
 .tab:hover {
     background-color: #264cb3;
 }
+.button {
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ccc;
+}
+
 
 .tabContent {
     display: none;
