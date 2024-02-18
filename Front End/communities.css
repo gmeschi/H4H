@@ -1,40 +1,38 @@
 body {
     margin: 0;
+    padding: 0;
     background: #ffffff;
     font-family: 'Work Sans', sans-serif;
     font-weight: 300;
+    border: black;
+    border-width: 20px;
 }
 
 .tabs {
     overflow: hidden;
 }
 
-.tab {
-    background-color:white;
-    float: left;
+/* Style the buttons */
+.tab button {
+    background-color: #ffb94f; /* Yellow color */
     border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-}
-
-
-.button {
+    color: white;
     padding: 10px 20px;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    color: #333;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
     font-size: 16px;
+    margin: 4px 2px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+    border-radius: 20px; /* Rounded edges */
+  }
+  
+.tab button:hover {
+    background-color: #ffd369; /* Darker yellow color on hover */
+  }
+  
 
-.button:hover {
-    background-color: #ccc;
-}
+
 
 
 .tabContent {
