@@ -35,7 +35,7 @@ header {
     flex-direction: row;
     color: #29091e;
     font-size: 1.7vw;
-    padding-right: 20vw;
+    padding-right: 18vw;
 }
 
 nav {
@@ -64,6 +64,18 @@ nav a {
     font-size: 1.4vw;
 }
 
+.active::before {
+    content: '';
+    display: block;
+    border-radius: 0.2vw;
+    height: .4vw;
+    background-color: bisque;
+
+    position: absolute;
+    top: -1vw;
+    width: 100%;
+}
+
 nav a:hover {
     color: bisque;
 }
@@ -71,11 +83,12 @@ nav a:hover {
 nav a::before {
     content: '';
     display: block;
-    height: 5px;
+    border-radius: 0.2vw;
+    height: .4vw;
     background-color: #29091e;
 
     position: absolute;
-    top: 0;
+    top: -1vw;
     width: 0%;
 
     transition: all ease-in-out 230ms;
