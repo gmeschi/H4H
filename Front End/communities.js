@@ -14,7 +14,7 @@ function sendToBack(category){
         //do stuff to data
         console.log(data);
         //call a function that does what we want
-        communities();
+        displayShit();
         
     })
     .catch(error => {
@@ -22,6 +22,10 @@ function sendToBack(category){
         console.error('Error:', error);
     });
 }
+function displayShit(results){
+    displayResults(results);
+}
+
 
 function communities(){
     
