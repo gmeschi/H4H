@@ -1,6 +1,6 @@
 
 function sendToBack(category){
-    url = "http://127.0.0.1:5500/getMain?=" + category;
+    url = "http://127.0.0.1:3000/getMain?=" + category;
     fetch(url, {
         method: 'GET',
     }).then(response => {
