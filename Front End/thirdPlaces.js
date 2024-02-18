@@ -28,10 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function sendBackend(location, activity, category) {
-    console.log("sendBackend Called");
+    //console.log("sendBackend Called");
     var userInput = location + " " + activity + " " + category;
-    //userInput = "liquor stores near me";
-    //what should this url be??
+
     //"http://127.0.0.1:5500/Front%20End/thirdPlaces.html?input=" + userInput;
     url = "http://127.0.0.1:3000/getThirdPlace?string=" + userInput;
     fetch(url, {
@@ -48,6 +47,8 @@ function sendBackend(location, activity, category) {
         console.log(data);
         //call a function that does what we want
         
+
+
     })
     .catch(error => {
         //deal with errors

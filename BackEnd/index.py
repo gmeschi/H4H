@@ -21,10 +21,11 @@ def get_third_place():
 def get_community():
     activity = request.args.get('whatever')
     #call function that returns the
-    dict = functionthatdoessomething(activity)
-    return json.dumps()
+    dict = getCommunities(activity)
+    return json.dumps(dict, indent = 4)
 
 if __name__ == '__main__':
     port = 3000
     app.run(port=port)
     print(f'Open the URL: http://localhost:{port} in your browser')
+
