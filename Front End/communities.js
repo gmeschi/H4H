@@ -1,4 +1,13 @@
 
+var name;
+var description;
+var locations;
+var meeting_times;
+
+
+
+
+
 function sendToBack(category){
     url = "http://127.0.0.1:3000/getCommunity?name=" + category;
     fetch(url, {
@@ -14,24 +23,9 @@ function sendToBack(category){
         //do stuff to data
         console.log(data);
         //call a function that does what we want
+        //console.log(data.Community1.name);
+        updatedSearchResults(data);
         
-        
-    })
-    .then (function(data){
-        let placeholder = document.querySelector("#data-output");
-        let out= " ";
-        for(i = 0; i < 15; ++i ){
-            out+= `
-            <tr>
-                <td>${data.Community1.name} </td>
-                <td>${data.Community1.description} </td>
-                <td>${data.Community1.locations} </td>
-                <td>${data.Community1.meeting_times} </td>
-
-            </tr>
-            `;
-        }
-        placeholder.innerHTML= out;
     })
     .catch(error => {
         //deal with errors
@@ -40,4 +34,22 @@ function sendToBack(category){
 }
 function openGroup(event, category) {
     sendToBack(category);
+}
+
+function updatedSearchResults(data) {
+    if(data.Community1.category == "volunteer"){
+        document.getElementById('resultText0').textContent = "Volunteering Based Communities:";
+    }
+    if(data.Community1.category == "social"){
+        document.getElementById('resultText0').textContent = "Social Based Communities:";
+    }
+    if(data.Community1.category == "fitness"){
+        document.getElementById('resultText0').textContent = "Fitness Based Communities:";
+    }
+
+    document.getElementById('resultText1').textContent = data.Community1.name + ": "+  data.Community1.description;
+    document.getElementById('resultText2').textContent = data.Community2.name + ": "+  data.Community2.description;
+    document.getElementById('resultText3').textContent = data.Community3.name + ": "+  data.Community3.description;
+    document.getElementById('resultText4').textContent = data.Community4.name + ": "+  data.Community4.description;
+    document.getElementById('resultText5').textContent = data.Community5.name + ": "+  data.Community5.description;
 }
