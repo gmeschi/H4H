@@ -39,4 +39,8 @@ function openGroup(event, category) {
 function updatedSearchResults(data) {
 
     document.getElementById('resultText1').textContent = data.Community1.name + ": "+  data.Community1.description;
+    document.getElementById('resultText2').textContent = data.Community2.name + ": "+  data.Community2.description;
+    document.getElementById('resultText3').textContent = data.Community3.name + ": "+  data.Community3.description;
+    document.getElementById('resultText4').textContent = data.Community4.name + ": "+  data.Community4.description;
+    document.getElementById('resultText5').textContent = data.Community5.name + ": "+  data.Community5.description;
 }
