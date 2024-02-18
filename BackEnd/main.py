@@ -211,22 +211,20 @@ meeting_times = [
 categories = ["volunteer", "social", "fitness"]
 
 class communities:
-  def __init__(self):
+  def __init__(self, cat):
     self.name = random.choice(names)
     self.description = random.choice(descriptions)
     self.num_members = random.randint(5, 100)
-    self.category = random.choice(categories)
+    self.category = cat
     self.locations = random.choice(locations)
     self.meeting_times = random.choice(meeting_times)
 
 def getCommunities(category):
   community_dict = {}
-  for i in range(0,15):
+  for i in range(0,5):
     #generate a community and add to dict if right category
-    nCom = communities()
-    if nCom.category == category:
-      #add to dict
-      community_dict[f'Community{i+1}'] = nCom
+    nCom = communities(category)
+    community_dict[f'Community{i+1}'] = nCom
   return community_dict
       
 def custom_serializer(obj):

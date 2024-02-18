@@ -14,82 +14,30 @@ function sendToBack(category){
         //do stuff to data
         console.log(data);
         //call a function that does what we want
-        //displayShit();
         
+        
+    })
+    .then (function(data){
+        let placeholder = document.querySelector("#data-output");
+        let out= " ";
+        for(i = 0; i < 15; ++i ){
+            out+= `
+            <tr>
+                <td>${data.Community1.name} </td>
+                <td>${data.Community1.description} </td>
+                <td>${data.Community1.locations} </td>
+                <td>${data.Community1.meeting_times} </td>
+
+            </tr>
+            `;
+        }
+        placeholder.innerHTML= out;
     })
     .catch(error => {
         //deal with errors
         console.error('Error:', error);
     });
 }
-function displayShit(results){
-    displayResults(results);
-}
-
-
-function communities(){
-    
-    function showVolunteerGroup() {
-      document.getElementById("volunteerGroup").style.display = "block";
-      document.getElementById("sportsGroup").style.display = "none";
-      document.getElementById("localClubActivities").style.display = "none";
-    }
-
-    function showLocalClubActivities() {
-      document.getElementById("volunteerGroup").style.display = "none";
-      document.getElementById("sportsGroup").style.display = "none";
-      document.getElementById("localClubActivities").style.display = "block";
-    }
-    function searchResults(activityGroup) {
-        // Perform search based on the selected activity group
-        var results = getSearchResults(activityGroup); // Assuming getSearchResults function is defined in your script
-      
-        // Display search results
-        displayResults(results);
-      }
-      
-      function getSearchResults(activityGroup) {
-        // Placeholder function to simulate search results
-        // You would replace this with actual logic to fetch search results
-        var results = [];
-      
-        // Sample search results
-        if (activityGroup === 'volunteer') {
-          results = [
-            { title: 'Volunteer Opportunity 1', description: 'Description of volunteer opportunity 1' },
-            { title: 'Volunteer Opportunity 2', description: 'Description of volunteer opportunity 2' },
-            // Add more results as needed
-          ];
-        } else if (activityGroup === 'sports') {
-          results = [
-            { title: 'Sports Event 1', description: 'Description of sports event 1' },
-            { title: 'Sports Event 2', description: 'Description of sports event 2' },
-            // Add more results as needed
-          ];
-        } else if (activityGroup === 'localClub') {
-          results = [
-            { title: 'Local Club Activity 1', description: 'Description of local club activity 1' },
-            { title: 'Local Club Activity 2', description: 'Description of local club activity 2' },
-            // Add more results as needed
-          ];
-        }
-      
-        return results;
-      }
-      
-      function displayResults(results) {
-        var container = document.getElementById('searchResults');
-        container.innerHTML = ''; // Clear previous results
-      
-        // Create HTML elements for each search result and append to the container
-        results.forEach(function(result) {
-          var resultElement = document.createElement('div');
-          resultElement.innerHTML = '<h3>' + result.title + '</h3>' + '<p>' + result.description + '</p>';
-          container.appendChild(resultElement);
-        });
-      }
-}
-
-function openGroup(event, groupName){
-    sendToBack(groupName);
+function openGroup(event, category) {
+    sendToBack(category);
 }

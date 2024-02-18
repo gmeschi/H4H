@@ -8,9 +8,6 @@ from main import get_place_info
 from main import getCommunities
 from main import custom_serializer
 
-lat = 0
-long = 0
-
 app = Flask(__name__)
 CORS(app)
 @app.route('/getThirdPlace', methods=['GET'])
@@ -29,10 +26,6 @@ def get_community():
     dict = getCommunities(activity)
     return json.dumps(dict, default=custom_serializer, indent = 2)
 
-@app.route('/giveCoords', methods=['POST'])
-def give_cords():
-    lat = request.args.post('lat')
-    long = request.args.post('long')
 
 if __name__ == '__main__':
     port = 3000
