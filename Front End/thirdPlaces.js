@@ -1,26 +1,34 @@
 
 // Get the element with id="defaultOpen" and click on it
 //document.getElementById("defaultOpen").click();
-
 // Get the form element
-var form = document.getElementById('searchForm');
 
-// Add an event listener for the submit event
-form.addEventListener('submit', function(event) {
-    // Prevent the form from being submitted normally
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
+  // Get the form element
+  var form = document.getElementById('userInfo');
 
-    // Get the input values
-    var location = document.getElementById('location').value;
-    var activity = document.getElementById('activity').value;
-    var category = document.getElementById('category').value;
+  // Check if the form element exists before adding an event listener
+  if (form !== null) {
+    form.addEventListener('submit', function(event) {
+      // Prevent the form from being submitted normally
+      event.preventDefault();
 
-    // Pass the input values to the sendBackend function
-    sendBackend(location, activity, category);
+      // Get the input values
+      var location = document.getElementById('location').value;
+      var activity = document.getElementById('activity').value;
+      var category = document.getElementById('category').value;
+
+      // Pass the input values to the sendBackend function
+      sendBackend(location, activity, category);
+    });
+  } else {
+    console.error("Form element with ID 'form' not found");
+  }
 });
 
+
 function sendBackend(location, activity, category) {
-    console.log("sendBackend Called\n");
+    console.log("sendBackend Called");
     var userInput = location + " " + activity + " " + category;
     //userInput = "liquor stores near me";
     //what should this url be??
