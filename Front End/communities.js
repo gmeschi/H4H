@@ -32,7 +32,7 @@ function sendToBack(category){
             `;
         }
         placeholder.innerHTML= out;
-    }
+    })
     .catch(error => {
         //deal with errors
         console.error('Error:', error);
