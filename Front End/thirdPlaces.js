@@ -2,6 +2,10 @@
 // Declare map and marker variables in the global scope
 var map;
 var marker;
+var locationName;
+var locationAddress;
+var locationData;
+
 
 // Get the element with id="defaultOpen" and click on it
 //document.getElementById("defaultOpen").click();
@@ -47,14 +51,20 @@ function sendBackend(location, activity, category) {
         return response.json();
     })
     .then(data =>{
-        //do stuff to data
-        console.log(data);
-        //call a function that does what we want
-        var address = data.candidates[0].formatted_address;
-        geocode(address, function(latitude, longitude) {
-            console.log(latitude, longitude);
-            updateLocation(latitude, longitude);
-        });
+        if (data.candidates && data.candidates.length > 0) {
+    
+            // //do stuff to data
+
+            var address = data.candidates[0].formatted_address;
+            geocode(address, function(latitude, longitude) {
+                console.log(latitude, longitude);
+                updateLocation(latitude, longitude);
+            });
+            updatedSearchResults(data);
+            
+        } else {
+            console.error('Candidates array is empty or not found in data:', data);
+        }
     })
     .catch(error => {
         //deal with errors
@@ -94,4 +104,23 @@ function updateLocation(latitude, longitude) {
     var newLocation = {lat: latitude, lng: longitude};
     map.setCenter(newLocation);
     marker.setPosition(newLocation);
+}
+
+document.getElementById('userInfo').addEventListener('submit', function(event) {
+    event.preventDefault();  // Prevent the form from being submitted normally
+
+    // Display the window
+    document.getElementById('searchResult').style.display = 'block';
+
+    // You can also update the content of the window here, if needed
+});
+
+function updatedSearchResults(data) {
+    locationAddress = data.candidates[0].formatted_address;
+    locationName = data.candidates[0].name;
+    locationName = data.candidates[0].name;
+
+    console.log(locationAddress);
+    console.log(locationName);
+    document.getElementById('resultText').textContent = locationName + " at " + locationAddress;
 }
