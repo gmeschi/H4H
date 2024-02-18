@@ -1,6 +1,6 @@
 
 function sendToBack(category){
-    url = "http://127.0.0.1:3000/getCommunity?name=" + category;
+    url = "http://127.0.0.1:5500/getMain?=" + category;
     fetch(url, {
         method: 'GET',
     }).then(response => {
@@ -14,15 +14,135 @@ function sendToBack(category){
         //do stuff to data
         console.log(data);
         //call a function that does what we want
+        communities();
         
     })
+    .then (function(data){
+        let placeholder = document.querySelector("#data-output");
+        let out= " ";
+        for(let datum of data){
+            out+= `
+            <tr>
+                <td>${data.name} </td>
+                <td>${data.description} </td>
+                <td>${data.locations} </td>
+                <td>${data.meeting_times} </td>
+
+            </tr>
+            `;
+        }
+        placeholder.innerHTML= out;
+    }
     .catch(error => {
         //deal with errors
         console.error('Error:', error);
     });
 }
 
-function openGroup(event, category) {
-    sendToBack(category);
-}
+function communities(){
+    
+    function showVolunteerGroup() {
+      document.getElementById("volunteerGroup").style.display = "block";
+      document.getElementById("sportsGroup").style.display = "none";
+      document.getElementById("localClubActivities").style.display = "none";
+    }
 
+    
+
+    function showLocalClubActivities() {
+      document.getElementById("volunteerGroup").style.display = "none";
+      document.getElementById("sportsGroup").style.display = "none";
+      document.getElementById("localClubActivities").style.display = "block";
+    }
+    function searchResults(activityGroup) {
+        // Perform search based on the selected activity group
+        var results = getSearchResults(activityGroup); // Assuming getSearchResults function is defined in your script
+      
+        // Display search results
+        displayResults(results);
+      }
+      
+      function getSearchResults(activityGroup) {
+        // Placeholder function to simulate search results
+        // You would replace this with actual logic to fetch search results
+        var results = [];
+      
+        // Sample search results
+        if (activityGroup === 'volunteer') {
+          results = [
+            { title: 'Volunteer Opportunity 1', description: 'Description of volunteer opportunity 1' },
+            { title: 'Volunteer Opportunity 2', description: 'Description of volunteer opportunity 2' },
+            // Add more results as needed
+          ];
+        } else if (activityGroup === 'sports') {
+          results = [
+            { title: 'Sports Event 1', description: 'Description of sports event 1' },
+            { title: 'Sports Event 2', description: 'Description of sports event 2' },
+            // Add more results as needed
+          ];
+        } else if (activityGroup === 'localClub') {
+          results = [
+            { title: 'Local Club Activity 1', description: 'Description of local club activity 1' },
+            { title: 'Local Club Activity 2', description: 'Description of local club activity 2' },
+            // Add more results as needed
+          ];
+        }
+      
+        return results;
+      }
+
+      
+      function displayResults(results) {
+        var container = document.getElementById('searchResults');
+        container.innerHTML = ''; // Clear previous results
+      
+        // Create HTML elements for each search result and append to the container
+        results.forEach(function(result) {
+          var resultElement = document.createElement('div');
+          resultElement.innerHTML = '<h3>' + result.title + '</h3>' + '<p>' + result.description + '</p>';
+          container.appendChild(resultElement);
+        });
+      }
+      
+      function sendToBack(category) {
+        var url = "http://127.0.0.1:5500/getCommunity?category=" + category;
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('HTTP error! Status: ${response.status}');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Once data is received, call the function to display it
+                displayData(data, category);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+    
+    function displayData(data, category) {
+        var container = document.getElementById(category + "Group");
+        container.innerHTML = ""; // Clear previous content
+    
+        // Check if data is empty
+        if (data.length === 0) {
+            container.innerHTML = "<p>No data available for this category.</p>";
+            return;
+        }
+    
+        // Loop through the data and create HTML elements to display it
+        data.forEach(function(item) {
+            var itemElement = document.createElement("div");
+            itemElement.innerHTML = "<h3>" + item.title + "</h3><p>" + item.description + "</p>";
+            container.appendChild(itemElement);
+        });
+    }
+    
+    // Call the function when the page loads to display default category
+    sendToBack('volunteer');
+    
+    
+
+}
