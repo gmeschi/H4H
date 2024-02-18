@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var form = document.getElementById('userInfo');
 
   // Check if the form element exists before adding an event listener
-  if (form !== null) {
+  if (form != null) {
     form.addEventListener('submit', function(event) {
       // Prevent the form from being submitted normally
       event.preventDefault();
@@ -53,7 +53,18 @@ function sendBackend(location, activity, category) {
         //deal with errors
         console.error('Error:', error);
     });
+}
 
+function initMap() {
+    var location = {lat: -34.397, lng: 150.644}; // Replace with your location
 
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 4,
+        center: location
+    });
 
+    var marker = new google.maps.Marker({
+        position: location,
+        map: map
+    });
 }
