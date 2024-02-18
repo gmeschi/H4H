@@ -1,8 +1,11 @@
 body {
     margin: 0;
+    padding: 0;
     background: #ffffff;
     font-family: 'Work Sans', sans-serif;
     font-weight: 300;
+    border: black;
+    border-width: 20px;
 }
 
 .backgroundPic{
@@ -16,6 +19,71 @@ body {
     opacity: 0.8;
 }
 
+.container2 {
+    position: relative;
+    display: flex;
+    justify-content:space-around;
+    top:10vh;
+}
+
+.oftheday {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    width: 40vw;
+    height: 70vh;
+    background-color: #ffb94f;
+    padding: 1em;
+    color: var(--clr-light);
+    text-align: center;
+    font-size: 2vw;
+    border-radius: 1vw;
+    opacity: 0.95;
+    flex-shrink: 1;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 35vw;
+    height: 10vh;
+    background-color: #29091e;
+    color: bisque;
+    padding: 1em;
+    text-align: center;
+    font-size: 1.5vw;
+    border-radius: 0.5vw;
+}
+
+.detail-1 {
+    height: 2.5vh;
+    order: 1;
+}
+
+.detail-2 {
+    height: 5vh;
+    order: 2;
+}
+
+.detail-3 {
+    font-size: 1.75vw;
+    flex-grow: 1;
+    order: 4;
+}
+
+.detail-4 {
+    order: 3;
+}
+
+img {
+    
+    max-width: 20vw;
+    max-height: 15vh;
+}
+
+/*Nav bar styling*/
 .container1 {
     width: 80%;
     margin: 0 auto;
@@ -31,8 +99,6 @@ header {
 }
 
 .logo {
-    display: flex;
-    flex-direction: row;
     color: #29091e;
     font-size: 1.7vw;
     padding-right: 18vw;
