@@ -1,12 +1,7 @@
-#import googlemaps
+import googlemaps
 import requests
 import random
 
-#gmaps = googlemaps.Client(key = 'AIzaSyA5L1utCSQOnj7d-MKRU8kLUopQ3DUVE38')
-
-#reverse_geocode_result = gmaps.reverse_geocode((40.714224, -73.961452))
-
-#print(reverse_geocode_result)
 
 def get_place_info(address, api_key):
 # Base URL
@@ -34,22 +29,6 @@ api_key = "AIzaSyA5L1utCSQOnj7d-MKRU8kLUopQ3DUVE38"
 address = input("Give a Description of the location you would like to visit: \n")
 dict = get_place_info(address, api_key)
 
-'''
-if place_info is not None:
-  print(place_info)
-else:
-  print("Failed to get a response from Google Places API")
-
-dict = {'candidates': 
-[{'business_status': 'OPERATIONAL', 
-'formatted_address': '1000 Lafayette St C, Santa Clara, CA 95050, United States', 
-'name': 'Hungry Hound', 
-'opening_hours': {'open_now': True}, 
-'photos': [{'height': 3072, 'html_attributions': ['<a href="https://maps.google.com/maps/contrib/116370847898776376364">Michael Xu</a>'], 
-'photo_reference': 'ATplDJbjF3AMgKhWGA3ZUcImjKOmyIQ2pPL53mDlZACqzpgNPEIK5PyORSH8ai2QJenbxp-zsAXK4Wnqw86ZWMuSfo7oEHRxScvwIhaNqrgUSQiLTOpX_9V5KpViK2lKlqn2iWRQQ7DuTzxXrLI_TIjLGng6Cm9vJ59Fc89yG1D90Uss2ozb', 'width': 4080}], 
-'rating': 4.4}], 'status': 'OK'}
-'''
-
 business_status = dict['candidates'][0]['business_status']
 adress = dict['candidates'][0]['formatted_address']
 name = dict['candidates'][0]['name']
@@ -61,6 +40,7 @@ print("Name: " + name)
 print("Adress: " + adress)
 print({True: "Open Now!", False: "Closed!", None: "Unknown if Open or Closed!"} [openNow])
 print("Rating: " + str(rating) + "/5")
+
 
 names = [
     "Harmony Haven", "Serenity Springs", "Tranquil Terrace", "Unity Utopia", "Peaceful Pines",
@@ -208,17 +188,16 @@ meeting_times = [
 ('10:00 AM', '11:00 AM'), ('11:30 AM', '01:00 PM'), ('10:30 AM', '01:00 PM'), 
 ('01:00 PM', '04:00 PM'), ('11:30 AM', '01:30 PM')]
 
+category = [
+  "Volunteer", "Social", "Fitness"]
 
 class communities:
-  def __init__(self, name, description, num_members, volunteer, social, fitness, location, meeting_days, meeting_times):
+  def __init__(self):
     self.name = random.choice(names)
     self.description = random.choice(descriptions)
     self.num_members = random.randint(5, 100)
-    self.volunteer = random.choice([True, False])
-    self.social = random.choice([True, False])
-    self.fitness = random.choice([True, False])
+    self.category = random.choice(category)
     self.locations = random.choice(locations)
     self.meeting_times = random.choice(meeting_times)
-
 
 
