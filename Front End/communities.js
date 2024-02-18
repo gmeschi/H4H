@@ -20,13 +20,13 @@ function sendToBack(category){
     .then (function(data){
         let placeholder = document.querySelector("#data-output");
         let out= " ";
-        for(let datum of data){
+        for(i = 0; i < 15; ++i ){
             out+= `
             <tr>
-                <td>${data.name} </td>
-                <td>${data.description} </td>
-                <td>${data.locations} </td>
-                <td>${data.meeting_times} </td>
+                <td>${data.Community1.name} </td>
+                <td>${data.Community1.description} </td>
+                <td>${data.Community1.locations} </td>
+                <td>${data.Community1.meeting_times} </td>
 
             </tr>
             `;
