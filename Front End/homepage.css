@@ -44,6 +44,7 @@ body {
 }
 
 .detail {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -78,9 +79,14 @@ body {
 }
 
 img {
-    
+    margin: auto;
     max-width: 20vw;
     max-height: 15vh;
+}
+
+.oftheday-1 .detail-4 img {
+    position: relative;
+    top:1vh;
 }
 
 /*Nav bar styling*/
