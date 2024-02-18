@@ -211,7 +211,7 @@ meeting_times = [
 categories = ["volunteer", "social", "fitness"]
 
 class communities:
-  def __init__(self, name, description, num_members, category, location, meeting_days, meeting_times):
+  def __init__(self):
     self.name = random.choice(names)
     self.description = random.choice(descriptions)
     self.num_members = random.randint(5, 100)
@@ -229,6 +229,16 @@ def getCommunities(category):
       community_dict[f'Community{i+1}'] = nCom
   return community_dict
       
-
+def custom_serializer(obj):
+    if isinstance(obj, communities):
+        return {
+            'name': obj.name,
+            'description': obj.description,
+            'num_members': obj.num_members,
+            'category': obj.category,
+            'locations': obj.locations,
+            'meeting_times': obj.meeting_times
+        }
+    raise TypeError(f"Object of type {type(obj)} is not JSON serializable")
 
 
