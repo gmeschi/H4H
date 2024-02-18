@@ -13,13 +13,12 @@ def get_third_place():
     
     api_key = "AIzaSyA5L1utCSQOnj7d-MKRU8kLUopQ3DUVE38"
     #first arg is the string from front end
-    string = request.args.get('getMain')
+    string = request.args.get('string')
     dict = get_place_info(string, api_key)
     return json.dumps(dict, indent=4)
 
 @app.route('/getCommunity', methods=['GET'])
 def get_community():
-    long = 0
     activity = request.args.get('whatever')
     #call function that returns the
     dict = functionthatdoessomething(activity)

@@ -34,7 +34,7 @@ function sendBackend(location, activity, category) {
     //what should this url be??
     //"http://127.0.0.1:5500/Front%20End/thirdPlaces.html?input=" + userInput;
     //"http://127.0.0.1:5500/getMain?=" + input
-    url = "http://127.0.0.1:5500/getThirdPlace?=" + userInput;
+    url = "http://127.0.0.1:3000/getThirdPlace?string=" + userInput;
     fetch(url, {
         method: 'GET',
     }).then(response => {
