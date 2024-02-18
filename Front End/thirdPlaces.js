@@ -104,6 +104,7 @@ function initMap() {
 function updateLocation(latitude, longitude) {
     var newLocation = {lat: latitude, lng: longitude};
     map.setCenter(newLocation);
+    map.setZoom(15);
     marker.setPosition(newLocation);
 }
 
@@ -122,6 +123,11 @@ function updatedSearchResults(data) {
         locationRating = data.candidates[0].rating || "";
         locationOpen = data.candidates[0].opening_hours ? data.candidates[0].opening_hours.open_now : null;
         locationOpenStatus = (locationOpen !== null) ? (locationOpen ? "Open" : "Closed") : "";
+        if (locationOpenStatus === "Open") {
+            document.getElementById('LocationOpenStatus').style.color = "green";
+        } else {
+            document.getElementById('LocationOpenStatus').style.color = "red";
+        }
 
         locationAddress = data.candidates[0].formatted_address || "";
 
