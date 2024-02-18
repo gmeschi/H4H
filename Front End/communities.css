@@ -21,11 +21,12 @@ body {
 .tab {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to the start (left) of the container */
+    align-items: flex-start;
+    margin-left: 20px; /* Align items to the start (left) of the container */
   }
   
 .tab button {
-    background-color: #29091e; /* Brown color */
+    background-color: #8B4513; /* Brown color */
     border: none;
     color: white;
     padding: 10px 20px;
