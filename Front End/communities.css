@@ -35,7 +35,9 @@ h1 {
 /* Style the buttons */
 .tab {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content:center;
+    gap:15vw;
     align-items: flex-start;
     margin-left: 2vw; /* Align items to the start (left) of the container */
   }
@@ -66,18 +68,27 @@ h1 {
     border-top: none;
 }
 
+#resultText0 {
+    margin-left: 2vw;
+    background-color: ;
+}
+
 #resultText1{
-    background-color: bisque; /* Brown color */
-    border: none;
+    background-color: bisque;
     color: #29091e;
-    padding: 0.75vh 0.5vw;
+    padding: 0.5vh 0.5vw;
     width: 26vw;
     text-align: left;
     text-decoration: none;
     display: block;
     font-size: 1.3vw;
-    border-radius: 1.5vw; /* Rounded edges */
+    border-radius: 0.75vw;
     margin-left: 2vw;
+    margin-top: 5vh;
+}
+
+#searchResult {
+    
 }
 
 /*top nav bar*/
