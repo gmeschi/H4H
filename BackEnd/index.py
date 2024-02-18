@@ -8,7 +8,6 @@ from main import get_place_info
 
 app = Flask(__name__)
 CORS(app)
-
 @app.route('/getThirdPlace', methods=['GET'])
 def get_third_place():
     
