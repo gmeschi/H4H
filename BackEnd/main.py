@@ -1,5 +1,6 @@
 import googlemaps
 import requests
+import random
 
 #gmaps = googlemaps.Client(key = 'AIzaSyA5L1utCSQOnj7d-MKRU8kLUopQ3DUVE38')
 
@@ -58,7 +59,166 @@ rating = dict['candidates'][0]['rating']
 print("Business is " + business_status.lower() + ".")
 print("Name: " + name)
 print("Adress: " + adress)
-print({True: "Open Now!", False: "Closed!"} [openNow])
+print({True: "Open Now!", False: "Closed!", None: "Unknown if Open or Closed!"} [openNow])
 print("Rating: " + str(rating) + "/5")
+
+names = [
+    "Harmony Haven", "Serenity Springs", "Tranquil Terrace", "Unity Utopia", "Peaceful Pines",
+    "Blissful Meadows", "Joyful Junction", "Pleasant Grove", "Calm Cove", "Serenity Sanctuary",
+    "Happy Heights", "Cheerful Corner", "Contentment Court", "Friendly Fields", "Radiant Ridge",
+    "Pleasantville", "Tranquility Trail", "Harmony Heights", "Joyous Junction", "Serenity Springs",
+    "Unity Union", "Peaceful Park", "Cozy Corner", "Gratitude Grove", "Harmony Hill", "Cheerful Valley",
+    "Blissful Boulevard", "Serene Shores", "Pleasant Place", "Tranquil Terrace", "Friendly Farmstead",
+    "Joyful Jamboree", "Contentment Crossing", "Serenity Square", "Unity Village", "Peaceful Peninsula",
+    "Calm Crossing", "Serene Slopes", "Happy Haven", "Cheerful Chateau", "Blissful Bay", "Pleasant Peninsula",
+    "Harmony Harbor", "Tranquility Town", "Joyful Junction", "Serene Summit", "Unity Estate", "Peaceful Point",
+    "Calm Cove", "Blissful Brook"
+]
+
+descriptions = [
+    "A peaceful retreat where neighbors come together for community gardening.",
+    "Rejuvenate your soul in this oasis with healing yoga sessions.",
+    "Serenity meets adventure with scenic hiking trails at your doorstep.",
+    "Celebrate diversity and cultural harmony through vibrant community events.",
+    "Find solace in meditative forest walks beneath towering pine trees.",
+    "Picnic on emerald grass and lose yourself in the starry skies of tranquility.",
+    "Join in the laughter and connection of lively neighborhood gatherings.",
+    "Bike through charming streets lined with blossoming trees.",
+    "Embrace serenity with soothing beachcombing experiences by the calm sea.",
+    "Discover inner peace through mindfulness retreats in a tranquil setting.",
+    "Rise above with panoramic views and a community filled with joy.",
+    "Brighten your day with friendly hellos and cheerful neighborhood walks.",
+    "Experience contentment in every corner of this close-knit community.",
+    "Play, laugh, and make memories in the welcoming embrace of friendly fields.",
+    "Bask in the glow of community spirit atop a radiant ridge.",
+    "Step into a picturesque world of charm and neighborly bliss.",
+    "Journey through nature's beauty on serene trails that soothe the soul.",
+    "Elevate your living experience in a harmonious hillside community.",
+    "Where the joy of community meets the excitement of endless possibilities.",
+    "Unite with neighbors in a shared vision of harmony and cooperation.",
+    "Snuggle into the warmth of community and coziness on every corner.",
+    "Cultivate gratitude in the heart of a lush grove filled with abundance.",
+    "Take a leisurely stroll down blissful boulevards lined with laughter.",
+    "Find peace along tranquil shores where waves whisper serenity.",
+    "Discover the pleasure of belonging in a welcoming, pleasant place.",
+    "Connect with nature and community in the heart of a friendly farmstead.",
+    "Join the festivities and create memories in this joyful jamboree of community.",
+    "Where paths converge, find contentment in the shared journey of community.",
+    "Gather in serenity and harmony at the heart of this peaceful square.",
+    "Embrace unity and diversity in a vibrant village buzzing with community spirit.",
+    "Retreat to a tranquil peninsula where peace reigns supreme.",
+    "Navigate life's journey with ease and tranquility at every calm crossing.",
+    "Ascend to serenity on gentle slopes where peace is always within reach.",
+    "Discover happiness and belonging in the comforting embrace of this haven.",
+    "Elegant charm meets cheerful community spirit in this delightful chateau.",
+    "Sail into blissful waters and embrace the serene beauty of the bay.",
+    "Breathe in the fresh air and bask in the beauty of a pleasant peninsula.",
+    "Dock your worries and find harmony in the sheltered embrace of the harbor.",
+    "Wander through the quaint streets and discover the tranquility of town life.",
+    "Reach new heights of peace and serenity atop the tranquil summit.",
+    "Unite with fellow residents in a shared commitment to community and connection.",
+    "Find your peaceful point of refuge where serenity meets the sea.",
+    "Relax and recharge in the gentle embrace of this serene cove community.",
+    "Follow the gentle flow of community and tranquility along the blissful brook.",
+    "Breathe in the fresh mountain air and embrace the tranquility of terrace living.",
+    "Share laughter and play in the wide-open spaces of friendly fields.",
+    "Bask in the warmth of community and the radiant beauty of the ridge.",
+    "Refresh your spirit in the natural springs of serenity and renewal.",
+    "Create lasting memories and friendships in the haven of harmonious living.",
+    "Where joy intersects with community, creating endless opportunities for connection.",
+    "Find delight in the simple pleasures of life within the welcoming groves.",
+    "Cast your worries away and sail into the tranquil waters of blissful bay."
+]
+
+locations = [
+    "Los Angeles",
+    "San Diego",
+    "San Jose",
+    "San Francisco",
+    "Fresno",
+    "Sacramento",
+    "Long Beach",
+    "Oakland",
+    "Bakersfield",
+    "Anaheim",
+    "Santa Ana",
+    "Riverside",
+    "Stockton",
+    "Irvine",
+    "Chula Vista",
+    "Fremont",
+    "San Bernardino",
+    "Modesto",
+    "Fontana",
+    "Oxnard",
+    "Moreno Valley",
+    "Huntington Beach",
+    "Glendale",
+    "Santa Clarita",
+    "Garden Grove",
+    "Oceanside",
+    "Rancho Cucamonga",
+    "Santa Rosa",
+    "Ontario",
+    "Elk Grove",
+    "Corona",
+    "Lancaster",
+    "Palmdale",
+    "Salinas",
+    "Pomona",
+    "Hayward",
+    "Escondido",
+    "Torrance",
+    "Sunnyvale",
+    "Orange",
+    "Fullerton",
+    "Pasadena",
+    "Thousand Oaks",
+    "Visalia",
+    "Simi Valley",
+    "Concord",
+    "Roseville",
+    "Victorville",
+    "Santa Clara"
+]
+
+meeting_days = [
+'TRW', 'MTW', 'MTW', 'TS', 'MTW', 'Su', 'Su', 'MT', 'Su', 'Su', 'MTW', 
+'Su', 'Su', 'TWR', 'R', 'M', 'Su', 'MTW', 'M', 'Su', 'Su', 'MWF', 'Su', 
+'Su', 'Su', 'W', 'Su', 'TWR', 'TR', 'W', 'MTW', 'Su', 'TR', 'W', 'R', 
+'MT', 'Su', 'W', 'Su', 'F', 'M', 'Su', 'W', 'Su', 'Su', 'M', 'TR', 'MT', 
+'Su', 'Su']
+
+meeting_times = [
+('09:30 AM', '10:30 AM'), ('02:00 PM', '04:00 PM'), ('11:30 AM', '02:30 PM'), 
+('03:30 PM', '05:30 PM'), ('01:00 PM', '02:00 PM'), ('12:30 PM', '03:30 PM'), 
+('05:30 PM', '08:00 PM'), ('12:00 PM', '01:30 PM'), ('11:00 AM', '01:00 PM'), 
+('10:30 AM', '01:30 PM'), ('02:00 PM', '03:00 PM'), ('02:30 PM', '04:30 PM'), 
+('12:00 PM', '01:00 PM'), ('11:30 AM', '01:00 PM'), ('03:00 PM', '06:00 PM'), 
+('10:00 AM', '01:00 PM'), ('11:30 AM', '01:30 PM'), ('12:00 PM', '02:00 PM'), 
+('01:00 PM', '03:00 PM'), ('12:30 PM', '03:30 PM'), ('11:30 AM', '01:30 PM'), 
+('11:30 AM', '02:30 PM'), ('09:00 AM', '10:00 AM'), ('01:00 PM', '04:00 PM'), 
+('12:30 PM', '02:00 PM'), ('12:30 PM', '02:30 PM'), ('02:30 PM', '05:30 PM'), 
+('10:00 AM', '11:00 AM'), ('11:30 AM', '01:30 PM'), ('10:00 AM', '11:00 AM'), 
+('12:30 PM', '03:30 PM'), ('11:00 AM', '02:00 PM'), ('01:00 PM', '03:00 PM'), 
+('12:00 PM', '01:00 PM'), ('11:00 AM', '02:00 PM'), ('11:30 AM', '02:30 PM'), 
+('01:00 PM', '03:00 PM'), ('12:00 PM', '01:30 PM'), ('12:30 PM', '03:00 PM'), 
+('11:00 AM', '01:00 PM'), ('11:00 AM', '12:00 PM'), ('12:00 PM', '02:00 PM'), 
+('10:30 AM', '01:30 PM'), ('11:00 AM', '01:30 PM'), ('11:30 AM', '01:30 PM'), 
+('10:00 AM', '11:00 AM'), ('11:30 AM', '01:00 PM'), ('10:30 AM', '01:00 PM'), 
+('01:00 PM', '04:00 PM'), ('11:30 AM', '01:30 PM')]
+
+
+class communities:
+  def __init__(self, name, description, num_members, volunteer, social, fitness, location, meeting_days, meeting_times):
+    self.name = random.choice(names)
+    self.description = random.choice(descriptions)
+    self.num_members = random.randint(5, 100)
+    self.volunteer = random.choice([True, False])
+    self.social = random.choice([True, False])
+    self.fitness = random.choice([True, False])
+    self.locations = random.choice(locations)
+    self.meeting_times = random.choice(meeting_times)
+
 
 
