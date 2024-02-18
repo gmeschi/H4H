@@ -14,31 +14,44 @@ body {
     position: absolute;
     margin-top: 100vh;
     z-index: -1;
-    background-image: url(park.jpg);
+    background-image: url(rallycar.jpg);
     background-position: center;
     background-size: cover;
     opacity: 0.8;
 }
+
+h1 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-left: 20px;
+    color: #29091e;
+    text-align: center;
+    font-size: 1.7vw;
+    background-color: bisque;
+    width: 12vw;
+    border-radius: 0.5vw;
+}
+
 /* Style the buttons */
 .tab {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 20px; /* Align items to the start (left) of the container */
+    margin-left: 2vw; /* Align items to the start (left) of the container */
   }
   
 .tab button {
     background-color: #29091e; /* Brown color */
     border: none;
     color: bisque;
-    padding: 10px 20px;
+    padding: 0.75vh 0.5vw;
     text-align: center;
     text-decoration: none;
     display: block;
-    font-size: 16px;
+    font-size: 1.3vw;
+    border-radius: 1.5vw; /* Rounded edges */
     margin: 4px 0; /* Adjust vertical spacing */
     cursor: pointer;
-    border-radius: 20px; /* Rounded edges */
   }
   
 .tab button:hover {
@@ -53,6 +66,21 @@ body {
     border-top: none;
 }
 
+#resultText1{
+    background-color: bisque; /* Brown color */
+    border: none;
+    color: #29091e;
+    padding: 0.75vh 0.5vw;
+    width: 26vw;
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    font-size: 1.3vw;
+    border-radius: 1.5vw; /* Rounded edges */
+    margin-left: 2vw;
+}
+
+/*top nav bar*/
 .container {
     width: 80%;
     margin: 0 auto;
