@@ -1,6 +1,6 @@
 
 function sendToBack(category){
-    url = "http://127.0.0.1:3000/getCommunity?name=" + category;
+    url = "http://127.0.0.1:5500/getMain?=" + category;
     fetch(url, {
         method: 'GET',
     }).then(response => {
@@ -14,7 +14,7 @@ function sendToBack(category){
         //do stuff to data
         console.log(data);
         //call a function that does what we want
-        //displayShit();
+        communities();
         
     })
     .catch(error => {
@@ -22,10 +22,6 @@ function sendToBack(category){
         console.error('Error:', error);
     });
 }
-function displayShit(results){
-    displayResults(results);
-}
-
 
 function communities(){
     
@@ -34,6 +30,8 @@ function communities(){
       document.getElementById("sportsGroup").style.display = "none";
       document.getElementById("localClubActivities").style.display = "none";
     }
+
+    
 
     function showLocalClubActivities() {
       document.getElementById("volunteerGroup").style.display = "none";
@@ -76,6 +74,7 @@ function communities(){
       
         return results;
       }
+
       
       function displayResults(results) {
         var container = document.getElementById('searchResults');
@@ -88,8 +87,46 @@ function communities(){
           container.appendChild(resultElement);
         });
       }
-}
+      
+      function sendToBack(category) {
+        var url = "http://127.0.0.1:5500/getMain?category=" + category;
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('HTTP error! Status: ${response.status}');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Once data is received, call the function to display it
+                displayData(data, category);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+    
+    function displayData(data, category) {
+        var container = document.getElementById(category + "Group");
+        container.innerHTML = ""; // Clear previous content
+    
+        // Check if data is empty
+        if (data.length === 0) {
+            container.innerHTML = "<p>No data available for this category.</p>";
+            return;
+        }
+    
+        // Loop through the data and create HTML elements to display it
+        data.forEach(function(item) {
+            var itemElement = document.createElement("div");
+            itemElement.innerHTML = "<h3>" + item.title + "</h3><p>" + item.description + "</p>";
+            container.appendChild(itemElement);
+        });
+    }
+    
+    // Call the function when the page loads to display default category
+    sendToBack('volunteer');
+    
+    
 
-function openGroup(event, groupName){
-    sendToBack(groupName);
 }
