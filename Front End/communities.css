@@ -10,7 +10,7 @@ body {
 }
 
 .tab {
-    background-color: #ba2525;
+    background-color:white;
     float: left;
     border: none;
     outline: none;
@@ -20,9 +20,7 @@ body {
     font-size: 17px;
 }
 
-.tab:hover {
-    background-color: #264cb3;
-}
+
 .button {
     padding: 10px 20px;
     background-color: white;
