@@ -6,8 +6,32 @@ body {
 }
 
 #map {
-    height: 600px;
-    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    float: right;
+    right: 2%;
+    height: 75vh;
+    top: 15vh;
+   
+    width: 60%;
+    z-index: 1;
+}
+
+#userInfo label,
+#userInfo input {
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+#searchResult {
+    display: none;  /* Initially hidden */
+    width: 35vw;     /* 80% of the parent element's width */
+    height: 40vh;   /* 50% of the viewport's height */
+    border: 1px solid black;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 .container {
