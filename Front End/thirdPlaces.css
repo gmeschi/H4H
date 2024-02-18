@@ -87,15 +87,16 @@ header {
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    
 }
 
 .logo {
-    display: flex;
-    flex-direction: row;
     color: #29091e;
+    text-align: center;
     font-size: 1.7vw;
-    padding-right: 18vw;
+    margin-right: 18vw;
+    background-color: bisque;
+    width: 10vw;
+    border-radius: 0.5vw;
 }
 
 nav {
