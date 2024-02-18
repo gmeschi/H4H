@@ -208,17 +208,26 @@ meeting_times = [
 ('10:00 AM', '11:00 AM'), ('11:30 AM', '01:00 PM'), ('10:30 AM', '01:00 PM'), 
 ('01:00 PM', '04:00 PM'), ('11:30 AM', '01:30 PM')]
 
+categories = ["volunteer", "social", "fitness"]
 
 class communities:
-  def __init__(self, name, description, num_members, volunteer, social, fitness, location, meeting_days, meeting_times):
+  def __init__(self, name, description, num_members, category, location, meeting_days, meeting_times):
     self.name = random.choice(names)
     self.description = random.choice(descriptions)
     self.num_members = random.randint(5, 100)
-    self.volunteer = random.choice([True, False])
-    self.social = random.choice([True, False])
-    self.fitness = random.choice([True, False])
+    self.category = random.choice(categories)
     self.locations = random.choice(locations)
     self.meeting_times = random.choice(meeting_times)
+
+def getCommunities(category):
+  a = 0
+  for i in range(0,15):
+    #generate a community and add to dict if right category
+    nCom = communities()
+    if nCom.category == category:
+      #add to dict
+      
+      
 
 
 
