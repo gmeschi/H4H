@@ -1,6 +1,6 @@
 
 function sendToBack(category){
-    url = "http://127.0.0.1:3000/getMain?=" + category;
+    url = "http://127.0.0.1:3000/getCommunity?name=" + category;
     fetch(url, {
         method: 'GET',
     }).then(response => {
@@ -29,11 +29,6 @@ function communities(){
       document.getElementById("volunteerGroup").style.display = "block";
       document.getElementById("sportsGroup").style.display = "none";
       document.getElementById("localClubActivities").style.display = "none";
-    }
-
-    function redirectToSportsPage() {
-      // Redirect to the sports page
-      window.location.href = "sports.html";
     }
 
     function showLocalClubActivities() {
@@ -89,8 +84,8 @@ function communities(){
           container.appendChild(resultElement);
         });
       }
-      
-  
-    
+}
 
+function openGroup(event, groupName){
+    sendToBack(groupName);
 }
