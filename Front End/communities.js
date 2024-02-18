@@ -37,6 +37,15 @@ function openGroup(event, category) {
 }
 
 function updatedSearchResults(data) {
+    if(data.Community1.category == "volunteer"){
+        document.getElementById('resultText0').textContent = "Volunteering Based Communities:";
+    }
+    if(data.Community1.category == "social"){
+        document.getElementById('resultText0').textContent = "Social Based Communities:";
+    }
+    if(data.Community1.category == "fitness"){
+        document.getElementById('resultText0').textContent = "Fitness Based Communities:";
+    }
 
     document.getElementById('resultText1').textContent = data.Community1.name + ": "+  data.Community1.description;
     document.getElementById('resultText2').textContent = data.Community2.name + ": "+  data.Community2.description;
