@@ -220,13 +220,14 @@ class communities:
     self.meeting_times = random.choice(meeting_times)
 
 def getCommunities(category):
-  a = 0
+  community_dict = {}
   for i in range(0,15):
     #generate a community and add to dict if right category
     nCom = communities()
     if nCom.category == category:
       #add to dict
-      
+      community_dict[f'Community{i+1}'] = nCom
+  return community_dict
       
 
 
