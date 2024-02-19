@@ -5,6 +5,8 @@ from datetime import datetime, timedelta
 from cachetools import TTLCache
 import json
 from main import get_place_info
+from main import getCommunities
+from main import custom_serializer
 
 app = Flask(__name__)
 CORS(app)
@@ -19,10 +21,11 @@ def get_third_place():
 
 @app.route('/getCommunity', methods=['GET'])
 def get_community():
-    activity = request.args.get('whatever')
+    activity = request.args.get('name')
     #call function that returns the
     dict = getCommunities(activity)
-    return json.dumps(dict, indent = 4)
+    return json.dumps(dict, default=custom_serializer, indent = 2)
+
 
 if __name__ == '__main__':
     port = 3000

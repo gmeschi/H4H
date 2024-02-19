@@ -5,9 +5,118 @@ body {
   font-weight: 300;
 }
 
-#map {
-    height: 600px;
+h1 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-left: 20px;
+    color: #29091e;
+    text-align: center;
+    font-size: 1.7vw;
+    background-color: bisque;
+    width: 12vw;
+    border-radius: 0.5vw;
+}
+
+.backgroundPic{
     width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    background-image: url(Coffeeshop.png);
+    background-position: center;
+    background-size: cover;
+    opacity: 0.8;
+}
+
+
+#map {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    float: right;
+    right: 2%;
+    height: 75vh;
+    top: 15vh;
+   
+    width: 60%;
+    z-index: 1;
+}
+
+form {
+    margin-left: 2vw;
+}
+
+#userInfo label,
+#userInfo input {
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    
+}
+
+#userInfo label {
+    display: flex;
+    width: 6vw;
+    background-color: #29091e; /* Brown color */
+    border: none;
+    color: bisque;
+    padding: 0.75vh 0.5vw;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.3vw;
+    margin: 4px 0;
+    border-radius: 1.5vw; /* Rounded edges */
+}
+
+#userInfo button {
+    margin-left: 30px; /* Adjust the left margin to shift the button to the right */
+}
+
+#searchResult {
+    display: none;  /* Initially hidden */
+    width: 35vw;     /* 80% of the parent element's width */
+    height: 25vh;   /* 50% of the viewport's height */
+    border: 1px solid #ccc; /* Add a border for better separation */
+    border-radius: 8px; /* Round the corners */
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: #f8f8f8; /* Add a background color */
+    text-align: center; /* Center the content */
+    font-size: min(2vh, 2vw); /* Set font size based on the smaller of viewport height and width */
+}
+
+/* Additional styling for individual paragraphs if needed */
+#searchResult p {
+    margin: 8px 0; /* Adjust vertical margin between paragraphs */
+    word-wrap: break-word; /* Allow long words to break and wrap to the next line */
+}
+
+#LocationName,
+#LocationRating,
+#LocationOpenStatus,
+#LocationAddress {
+    margin: 10px 0; /* Add margin to each paragraph for spacing */
+}
+
+/* Optionally, you can add additional styling for each paragraph individually */
+#LocationName {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007bff; /* Set the color to blue */
+}
+
+#LocationRating {
+    font-size: 1.2em;
+    color: #28a745; /* Set the color to green */
+}
+
+#LocationOpenStatus {
+    font-size: 1.2em;
+}
+
+#LocationAddress {
+    font-size: 1.2em;
+    color: #333; /* Set the color to dark gray */
 }
 
 .container {
@@ -21,15 +130,16 @@ header {
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    
 }
 
 .logo {
-    display: flex;
-    flex-direction: row;
     color: #29091e;
+    text-align: center;
     font-size: 1.7vw;
-    padding-right: 18vw;
+    margin-right: 18vw;
+    background-color: bisque;
+    width: 10vw;
+    border-radius: 0.5vw;
 }
 
 nav {

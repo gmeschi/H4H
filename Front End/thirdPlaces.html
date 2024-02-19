@@ -15,12 +15,13 @@
     
 </head>
 <body>
+    <div class="backgroundPic"></div>
     <header>
 
         <div class="container">
 
             <nav>
-                <h1 class="logo">Name of Project</h1>
+                <h1 class="logo">Conventus</h1>
                 <ul>                        
                     <li><a href="#" onclick="window.location.href='homepage.html'">Home</a></li>
                     <li><a class="active" href="#">Third Places</a></li>
@@ -30,22 +31,29 @@
 
         </div>
      </header>
-    <h1>3rd Places</h1>
-
-    <button onclick="window.location.href='Homepage.html'">Home</button>
+    <h1>Third Places</h1>
     
+
     <form id="userInfo">
         <label for="location">Location:</label>
-        <input type="text" id="location" name="location">
+        <input type="text" id="location" name="location" placeholder="Ex. Santa Clara">
     
         <label for="activity">Activity:</label>
-        <input type="text" id="activity" name="activity">
+        <input type="text" id="activity" name="activity" placeholder="Ex. park">
     
         <label for="category">Category:</label>
-        <input type="text" id="category" name="category">
+        <input type="text" id="category" name="category" placeholder="Ex. Exercise">
     
-        <input type="submit" value="Search">
+        <button type="submit">submit</button>
     </form>
+
+    <div id="searchResult">
+        <p id="LocationName"></p>
+        <p id="LocationRating"></p>
+        <p id="LocationOpenStatus"></p>
+        <p id="LocationAddress"></p>
+    </div>
+
 
     <div id="map"></div>
 
