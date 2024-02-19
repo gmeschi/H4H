@@ -14,7 +14,7 @@ body {
     position: absolute;
     margin-top: 100vh;
     z-index: -1;
-    background-image: url(rallycar.jpg);
+    background-image: url(comm.jpg);
     background-position: center;
     background-size: cover;
     opacity: 0.8;
@@ -36,23 +36,21 @@ h1 {
 .tab {
     display: flex;
     flex-direction: row;
-    justify-content:center;
-    gap:15vw;
+    justify-content: center;
+    gap: 10vw;
+
     align-items: flex-start;
-    margin-left: 2vw; /* Align items to the start (left) of the container */
+    margin-right: 3.25vw;
   }
   
 .tab button {
     background-color: #29091e; /* Brown color */
     border: none;
     color: bisque;
-    padding: 0.75vh 0.5vw;
+    padding: 6px 12px;
     text-align: center;
-    text-decoration: none;
-    display: block;
     font-size: 1.3vw;
-    border-radius: 1.5vw; /* Rounded edges */
-    margin: 4px 0; /* Adjust vertical spacing */
+    border-radius: 1vw; /* Rounded edges */
     cursor: pointer;
   }
   
@@ -68,27 +66,28 @@ h1 {
     border-top: none;
 }
 
-#resultText0 {
-    margin-left: 2vw;
-    background-color: ;
-}
-
-#resultText1{
-    background-color: bisque;
-    color: #29091e;
-    padding: 0.5vh 0.5vw;
-    width: 26vw;
-    text-align: left;
-    text-decoration: none;
-    display: block;
-    font-size: 1.3vw;
-    border-radius: 0.75vw;
-    margin-left: 2vw;
-    margin-top: 5vh;
-}
-
 #searchResult {
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+
+    text-align: center;
+    width: auto;
+    margin-top: 5vh;
+    padding: 6px 12px;
+}
+
+#resultText0 {
+    background-color: #ffb94f;
+    padding: 6px 12px;
+    border-radius: 0.5vw;
+}
+
+p {
+    background-color: bisque;
+    padding: 6px 12px;
+    border-radius: 0.5vw;
 }
 
 /*top nav bar*/

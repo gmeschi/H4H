@@ -27,14 +27,14 @@
 
 
   <div class="tab">
-    <button class="tablinks" onclick="openGroup(event, 'volunteer')">Volunteering</button>
-    <button class="tablinks" onclick="openGroup(event, 'fitness')">Sports</button>
-    <button class="tablinks" onclick="openGroup(event, 'social')">Social</button>
+    <button id="tab1" onclick="openGroup(event, 'volunteer')">Volunteering</button>
+    <button id="tab2" onclick="openGroup(event, 'fitness')">Sports</button>
+    <button id="tab3" onclick="openGroup(event, 'social')">Social</button>
   </div>
 
-  <p id="resultText1">Relevant communities will be displayed here:</p>
   <div id="searchResult">
-    <h2 id ="resultText0"> </h2>
+    <h2 id ="resultText0">Relevant communities will be displayed here:</h2>
+    <p id="resultText1"></p>
     <p id="resultText2"> </p>
     <p id="resultText3"> </p>
     <p id="resultText4"> </p>

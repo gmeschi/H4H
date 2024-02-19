@@ -74,15 +74,18 @@ form {
 
 #searchResult {
     display: none;  /* Initially hidden */
+    position: relative;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
     width: 35vw;     /* 80% of the parent element's width */
-    height: 25vh;   /* 50% of the viewport's height */
-    border: 1px solid #ccc; /* Add a border for better separation */
+    height: 18vh;   /* 50% of the viewport's height */
+    border: 2px solid #ffb94f; /* Add a border for better separation */
     border-radius: 8px; /* Round the corners */
     margin-top: 20px;
-    margin-left: 20px;
-    background-color: #f8f8f8; /* Add a background color */
+    margin: 1vw;
+    background-color: bisque; /* Add a background color */
     text-align: center; /* Center the content */
-    font-size: min(2vh, 2vw); /* Set font size based on the smaller of viewport height and width */
+    font-size: min(2vh, 2vw);  /*Set font size based on the smaller of viewport height and width */
 }
 
 /* Additional styling for individual paragraphs if needed */
@@ -102,12 +105,12 @@ form {
 #LocationName {
     font-size: 1.5em;
     font-weight: bold;
-    color: #007bff; /* Set the color to blue */
+    color: #29091e; /* Set the color to blue */
 }
 
 #LocationRating {
     font-size: 1.2em;
-    color: #28a745; /* Set the color to green */
+    color: #29091e; /* Set the color to green */
 }
 
 #LocationOpenStatus {
@@ -116,7 +119,7 @@ form {
 
 #LocationAddress {
     font-size: 1.2em;
-    color: #333; /* Set the color to dark gray */
+    color: #29091e; /* Set the color to dark gray */
 }
 
 .container {
