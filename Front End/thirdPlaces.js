@@ -75,7 +75,7 @@ function sendBackend(location, activity, category) {
 // function to 
 function geocode(address, callback) {
     var geocodingUrl = "https://maps.googleapis.com/maps/api/geocode/json";
-    fetch(`${geocodingUrl}?address=${encodeURIComponent(address)}&key=AIzaSyA5L1utCSQOnj7d-MKRU8kLUopQ3DUVE38`)
+    fetch(`${geocodingUrl}?address=${encodeURIComponent(address)}&key=`)
         .then(response => response.json())
         .then(data => {
             if (data.results && data.results.length > 0) {
